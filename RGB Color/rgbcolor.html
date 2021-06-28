@@ -27,7 +27,7 @@
             value="0" oninput="SetColor()">
         </div>
         <span id="output" onclick="Copy()">rgb(0,0,0)</span>
-        
+        <button id="rdcolor" onclick="Random()">Random Color</button>
     </div>
 
     <script>
@@ -63,7 +63,27 @@
             },2000);
 }
 
+    function Random()
+    {
+        
+             
+           
+            
+       var x = Math.round(Math.random()*255);
+       var y = Math.round(Math.random()*255);
+       var z = Math.round(Math.random()*255);
+     document.body.style.backgroundColor = 'rgb('+x+','+y+','+z+')';
+    var output =   document.getElementById("output");
+        output.innerHTML = 'rgb('+x+','+y+','+z+')';
+        output.style.color = 'rgb('+x+','+y+','+z+')';
 
+        document.getElementById("red").value = x;
+
+        document.getElementById("green").value = y;
+
+        document.getElementById("blue").value = z;
+
+    }
     </script>
 </body>
 </html>

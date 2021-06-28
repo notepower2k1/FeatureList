@@ -10,7 +10,7 @@ body{
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    width: 20%;
+    width: 40%;
     padding: 20px 0;
     font-size: 20px;
     font-weight: 500;
@@ -79,6 +79,16 @@ input[type='range']::-webkit-slider-thumb {
     font-size: 18px;
     border-radius: 2px;
     letter-spacing: 0.5px;
+}
+#rdcolor{
+  font-size: 10px;
+  background: transparent;
+  color:white;
+  outline: none;
+  padding: 10px;
+  border-radius: 50px;
+  letter-spacing: 1.5px;
+  font-family: 'Poppins',sans-serif;
 }
 span:hover{
     cursor: pointer;

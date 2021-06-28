@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="rgbcolor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <span id="Notify"><i class="fas fa-copy"></i>RGB Color Copied!</span>
+    <div class="container">
+        <div class="wrapper">
+            R<input type="range" id="red" min="0" max="255"
+            value="0" oninput="SetColor()">
+           
+        </div>
+        <div class="wrapper">
+            G<input type="range" id="green" min="0" max="255"
+            value="0" oninput="SetColor()">
+          
+        </div>
+        <div class="wrapper">
+            B<input type="range" id="blue" min="0" max="255"
+            value="0" oninput="SetColor()">
+        </div>
+        <span id="output" onclick="Copy()">rgb(0,0,0)</span>
+        
+    </div>
+
+    <script>
+        function SetColor()
+        {
+            var red = document.getElementById("red").value;
+            var green = document.getElementById("green").value;
+            var blue = document.getElementById("blue").value;
+           
+            
+            document.body.style.backgroundColor = 'rgb('+red+','+green+','+blue+')';
+            var output =   document.getElementById("output");
+            output.innerHTML = 'rgb('+red+','+green+','+blue+')';
+        }
+
+        function Copy() {
+            var copyText = document.getElementById("output");
+            var notify = document.getElementById("Notify");
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+            notify.style.display="inline";
+           
+            setTimeout(function Notify(){
+                notify.style.display="none";
+            },2000);
+}
+    </script>
+</body>
+</html>

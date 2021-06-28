@@ -1,0 +1,12 @@
+#myinput {
+    background: linear-gradient(to right, #000,red);
+    border: solid 1px #82CFD0;
+    border-radius: 8px;
+    height: 7px;
+    width: 356px;
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+  }
+  
+  

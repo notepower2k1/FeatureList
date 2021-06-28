@@ -40,7 +40,11 @@
             
             document.body.style.backgroundColor = 'rgb('+red+','+green+','+blue+')';
             var output =   document.getElementById("output");
+           
             output.innerHTML = 'rgb('+red+','+green+','+blue+')';
+
+           
+            output.style.color = 'rgb('+red+','+green+','+blue+')';
         }
 
         function Copy() {
@@ -58,6 +62,8 @@
                 notify.style.display="none";
             },2000);
 }
+
+
     </script>
 </body>
 </html>

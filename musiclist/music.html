@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="music.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="player">
+            <div class="sound">               
+                <i class="fas fa-volume-up" aria-hidden="true" onclick="just_mute()" id="volume_icon"></i>
+                           <input type="range" min="0" max="100" value="100" oninput="just_volume()" id="volume">                     
+                   </div>
+            <div class="left">
+                <img id="music_img">
+                <span id="title">Any Song - </span>
+                <span id="artist">Zico</span>
+            </div>
+            <div class="middle">
+                <div class="duration">
+                    <span id="current-duration">0:00</span>
+                    <input type="range" id="duration_slider" min="0" max="100" value="0" oninput="change_duration()">
+                    <span id="end-duration">0:00</span>
+                </div>
+                <div id="btn_control">
+                    <span onclick="just_shuffle()" id="shuffle"><i class="fa fa-random" aria-hidden="true"></i></span>
+                    <span onclick="just_previous()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></span>
+                    <button onclick="just_play()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                    <span onclick="just_next()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></span>
+                    <span onclick="just_repeat()" id="repeat"><i class="fa fa-redo" aria-hidden="true"></i></span>
+                 </div>
+             
+            </div>
+          
+        </div>
+        <div class="playlist">
+           
+            </div>
+        </div>
+    
+    
+
+    <script src="music.js"></script>
+</body>
+</html>

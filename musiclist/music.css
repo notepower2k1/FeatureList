@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+   
+    width: 50%;
+    min-width: 500px;
+    background: #fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 6px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+.player{
+   color: white;
+    text-align: center;
+    background-color: black;
+}
+.sound{
+    padding-top: 20px;
+}
+.left span#title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+.left span#artist {
+    font-size: 15px;
+    font-weight: 500;
+    color:#cc9ba1;
+}
+.left{
+  padding: 20px;
+}
+.left span{
+    display: block;
+  
+}
+.left img{
+    height: 300px;
+	width: 300px;
+	box-shadow: 1px 0px 20px 12px rgba(240,240,240,0.2);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+input[type="range"]#duration_slider
+{
+    width: 60%;
+}
+input[type="range"]#volume
+{
+    width: 20%;
+}
+#btn_control{
+    margin-top: 20px;
+    align-items: center;
+   
+}
+#btn_control span{
+    font-size: 20px;
+    margin:0 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+   
+}
+.middle{
+    padding-bottom: 20px;
+}
+.middle button{
+    font-size: 20px;
+  
+    color: #b3b3b3;
+    padding: 10px;
+    border-radius: 50%;
+    outline: 0;
+   
+    background: red;
+    color: white;
+    cursor: pointer;
+
+}
+#volume_icon{
+   
+    width: 20px;
+}
+.playlist {
+    padding:20px
+}
+  
+  .song {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+  .song.active {
+    background-color: var(--primary-color);
+  }
+  .song:active {
+    opacity: 0.8;
+  }
+  
+  .song.active .option,
+  .song.active .author,
+  .song.active .title {
+    color: #fff;
+  }
+  
+  .song .thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 8px;
+  }
+  
+  .song .body {
+    flex: 1;
+    padding: 0 16px;
+  }
+  
+  .song .title {
+    font-size: 18px;
+    color: var(--text-color);
+  }
+  
+  .song .author {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .song .option {
+    padding: 16px 8px;
+    color: #999;
+    font-size: 18px;
+  }

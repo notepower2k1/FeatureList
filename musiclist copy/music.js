@@ -1,10 +1,5 @@
-// Một số bài hát có thể bị lỗi do liên kết bị hỏng. Vui lòng thay thế liên kết khác để có thể phát
-// Some songs may be faulty due to broken links. Please replace another link so that it can be played
-
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
-const PlAYER_STORAGE_KEY = "F8_PLAYER";
 
 const player = $(".player");
 const cd = $(".cd");
@@ -19,13 +14,16 @@ const randomBtn = $(".btn-random");
 const repeatBtn = $(".btn-repeat");
 const playlist = $(".playlist");
 
+const recent_volume= $('#volume');
+const volume_icon = $('#volume_icon');
+
+var before_volume = 0.5;
 const app = {
   currentIndex: 0,
   isPlaying: false,
   isRandom : false,
   isRepeat : false,
-  // (1/2) Uncomment the line below to use localStorage
-  // config: JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {},
+  isMute : false,
   songs: [
     {
       name: "SÀI GÒN HÔM NAY MƯA",
@@ -202,6 +200,45 @@ const app = {
     
       audio.currentTime = seekTime;
     }
+
+    recent_volume.oninput = function(){
+      audio.volume = recent_volume.value / 100;
+    if(audio.volume > 0 && audio.volume < 0.99)
+    {
+        volume_icon.classList.remove("fa-volume-up");
+        volume_icon.classList.remove("fa-volume-off");
+        volume_icon.classList.add("fa-volume-down");
+    }
+    else if(audio.volume == 1){
+        volume_icon.classList.remove("fa-volume-down");
+        volume_icon.classList.add("fa-volume-up");
+    }
+    else if(audio.volume == 0){
+        volume_icon.classList.remove("fa-volume-down");
+        volume_icon.classList.add("fa-volume-off");
+    }
+    before_volume = audio.volume;
+    }
+
+    volume_icon.onclick = function(){
+      if(_this.isMute)
+      {
+        audio.volume = before_volume;
+      recent_volume.value = before_volume*100;
+      volume_icon.style.color="black"
+      _this.isMute = false;
+         
+           }
+  
+     else{
+      audio.volume = 0;
+      recent_volume.value = 0;
+      volume_icon.style.color="red"
+      _this.isMute = true;
+     }
+
+
+    }
   },
 
   scrollToActiveSong:function(){
@@ -259,4 +296,31 @@ const app = {
   
 };
 
-app.start();
+ app.start();
+
+const checkbox = $("#checkbox");
+const dashboard = $(".dashboard");
+const song = $(".song")
+const name_song = $(".name");
+const control_btn = $(".control")
+const btn = $(".btn")
+const features = {
+
+  handleEvents: function(){
+
+    checkbox.onchange = function(){
+      dashboard.classList.toggle('dark_dashboard');
+      playlist.classList.toggle('dark_playlist');
+      name_song.classList.toggle('dark_name');
+      control_btn.classList.toggle('dark_control');
+    }
+  },
+
+  start: function()
+  {
+    this.handleEvents();
+  }
+}
+features.start();
+
+console.log(checkbox)

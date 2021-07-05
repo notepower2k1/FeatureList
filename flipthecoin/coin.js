@@ -22,18 +22,20 @@
     handleEvents: function () {
 
         flipbtn.onclick = function () {
+            const sound = new Audio ("coinflipsound.mp3");
+            sound.play();
             let i = Math.floor(Math.random()*2)
             coin.style.animation ="none";
             if(i)
             {
                 setTimeout(function () {
-                    coin.style.animation = "spin-like 3s forwards";
+                    coin.style.animation = "spin-dislike 3s forwards";
                 },100);
                 like++;
             }
             else{
                 setTimeout(function () {
-                    coin.style.animation = "spin-dislike 3s forwards";
+                    coin.style.animation = "spin-like 3s forwards";
                 },100);
                 dislike++;
             }

@@ -10,23 +10,38 @@
     <title>Document</title>
 </head>
 <body>
-    
-        <div class="player">
-            <!-- Dashboard -->
+  <div class="feature-box">
+    <div class="sound">               
+      <i class="fas fa-volume-up" aria-hidden="true" id="volume_icon"></i>
+                 <input type="range" min="0" max="100" value="50" id="volume">                     
+         </div>
+    <div class="theme">
+      <input type="checkbox" id="checkbox">
+      <label for="checkbox" class="label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+      </label>
+    </div>
+  </div>
+      <div class="player">
+         
+          
             <div class="dashboard">
-              <!-- Header -->
+             
+            
               <header>
                 <h4>Now playing:</h4>
-                <h2>String 57th & 9th</h2>
+                <h2  class="name">String 57th & 9th</h2>
               </header>
           
-              <!-- CD -->
+             
               <div class="cd">
                 <div class="cd-thumb">
                 </div>
               </div>
           
-              <!-- Control -->
+             
               <div class="control">
                 <div class="btn btn-repeat">
                   <i class="fas fa-redo"></i>
@@ -51,12 +66,12 @@
               <audio id="audio" src=""></audio>
             </div>
           
-            <!-- Playlist -->
+          
             <div class="playlist">
             </div>
          </div>
-    
-
+        
+         
     <script src="music.js"></script>
 </body>
 </html>

@@ -64,8 +64,8 @@ function checker(input)
 
     var win_notify = document.getElementById('win_notify');
     var lose_notify = document.getElementById('lose_notify');
-    var win_sound = new Audio("/audio/win_sound.wav"); 
-    var lose_sound = new Audio("/audio/lose_sound.wav"); 
+    var win_sound = new Audio("win_sound.wav"); 
+    var lose_sound = new Audio("lose_sound.wav"); 
     
 
     if(player_score == 10)

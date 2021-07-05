@@ -8,22 +8,25 @@
   margin: 0;
   box-sizing: inherit;
 }
-
-body {
-  background-color: #f5f5f5;
+body{
+  transition: background 0.2 linear;
+  background:url(/image/bg-img.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 html {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  
+ 
 }
 
 .player {
   position: relative;
   max-width: 480px;
   margin: 0 auto;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
-
 .player .icon-pause {
   display: none;
 }
@@ -44,8 +47,19 @@ html {
   width: 100%;
   max-width: 480px;
   border-bottom: 1px solid #ebebeb;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
-
+.dark_dashboard {
+  padding: 16px 16px 14px;
+  background-color: #2b2c36;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 480px;
+  border-bottom: 1px solid #ebebeb;
+  color:white;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
 /* HEADER */
 header {
   text-align: center;
@@ -56,12 +70,18 @@ header h4 {
   color: var(--primary-color);
   font-size: 12px;
 }
-
-header h2 {
+#name {
   color: var(--text-color);
   font-size: 20px;
+  font-family: "Poppins", sans-serif;
 }
-
+.dark_name {
+  color: white;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+  letter-spacing:1px;
+}
 /* CD */
 .cd {
   display: flex;
@@ -91,7 +111,11 @@ header h2 {
   padding: 18px;
   font-size: 18px;
 }
-
+.dark_control .btn{
+  color: white;
+  padding: 18px;
+  font-size: 18px;
+}
 .control .btn.active {
   color: var(--primary-color);
 }
@@ -130,10 +154,16 @@ header h2 {
 
 /* PLAYLIST */
 .playlist {
+  margin-top: 400px;
+  padding: 12px;
+  background-color:white;
+  
+}
+.dark_playlist {
   margin-top: 408px;
   padding: 12px;
+  background-color: #2b2c36;
 }
-
 .song {
   display: flex;
   align-items: center;
@@ -141,7 +171,7 @@ header h2 {
   background-color: #fff;
   padding: 8px 16px;
   border-radius: 5px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .song.active {
@@ -185,4 +215,59 @@ header h2 {
   padding: 16px 8px;
   color: #999;
   font-size: 18px;
+}
+.feature-box{
+  background-color: #ffff;
+  position: absolute;
+  top:10px;
+  left:20px;
+  width: 20%;
+  padding: 20px 0;
+  border-radius: 6px;
+  color:white;
+  justify-items: center;
+  display: grid;
+  background-color: #333231;
+}
+.theme{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0;
+  box-sizing:border-box;
+}
+#checkbox{
+  opacity: 0;
+  position: absolute;
+}
+#checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+.label{
+  margin-top:20px;
+  height:26px;
+  width:50px;
+  background-color:#111;
+  justify-content:space-between;
+  border-radius: 50px;
+  display: flex;
+  padding:5px;
+  position: relative;
+  transform:scale(1.5);
+}
+.fa-moon{
+  color:#f1c40f;
+}
+.fa-sun{
+  color:#f39c12;
+}
+.ball{
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top:2px;
+    left:2px;
+    height:20px;
+    width:20px;
+    transition:transform 0.2s linear;
 }

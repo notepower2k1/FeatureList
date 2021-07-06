@@ -28,38 +28,38 @@ const app = {
     {
       name: "SÀI GÒN HÔM NAY MƯA",
       singer:  "JSOL & HOÀNG DUYÊN",
-      path: "/audio/music1.mp3",
-      image: "/image/img1.jpg"
+      path: "music1.mp3",
+      image: "img1.jpg"
     },
     {
       name: "Thở",
       singer:   "DaLab",
-      path:  "/audio/music2.mp3",
-      image:  "/image/canada.jpg"
+      path:  "music2.mp3",
+      image:  "canada.jpg"
     },   
      {
       name: "KHI EM LỚN",
       singer:  "Orange & Hoàng Dũng",
-      path: "/audio/music3.mp3",
-      image:  "/image/content2.jpg"
+      path: "music3.mp3",
+      image:  "content2.jpg"
     },
     {
       name: "Last",
       singer:  "Orange & Hoàng Dũng",
-      path: "/audio/music1.mp3",
-      image:  "/image/content2.jpg"
+      path: "music1.mp3",
+      image:  "content2.jpg"
     },
     {
       name: "SÀI GÒN HÔM NAY MƯA",
       singer:  "JSOL & HOÀNG DUYÊN",
-      path: "/audio/music1.mp3",
-      image: "/image/img1.jpg"
+      path: "music1.mp3",
+      image: "img1.jpg"
     },
     {
       name: "Thở",
       singer:   "DaLab",
-      path:  "/audio/music2.mp3",
-      image:  "/image/canada.jpg"
+      path:  "music2.mp3",
+      image:  "canada.jpg"
     },
   ],
 

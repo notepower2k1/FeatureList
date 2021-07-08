@@ -33,3 +33,7 @@ body{
 .card-body a{
     text-decoration: none;
 }
+.card-img-top{
+    width:483px;
+    height:235px;
+}

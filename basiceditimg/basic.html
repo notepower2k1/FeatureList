@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basic.css">
+</head>
+<body>
+    <div class="container">
+        <div class="feature">
+            <div class="input input__blur">
+              <label for="input--blur">Blur</label>
+                <input type="range" min="0" max="100" value="0" id="input--blur">
+            </div>
+            <div class="input input__constrast">
+            <label for="input--constrast">Constrast</label>
+                <input type="range" min="0" max="100" value="50" id="input--constrast">
+            </div>
+            <div class="input input__hue">
+                <label for="input--hue">Hue-Rotate</label>
+                <input type="range" min="0" max="360" value="0" id="input--hue">
+            </div>
+            <div class="input input__sepia">
+                <label for="input--sepia">Sepia</label>
+                <input type="range" min="0" max="100" value="0" id="input--sepia">
+            </div>
+            <div class="radio-btn">
+            <input type="radio" id="html" name="fav_language" value="HTML">No Flip
+              
+              <input type="radio" id="css" name="fav_language" value="CSS">Flip Horizontal
+              
+              <input type="radio" id="javascript" name="fav_language" value="JavaScript">Flip Vertical
+           
+        </div>
+            <input type="button" value="Choose Files!" onclick="document.getElementById('files').click();"/>
+            <input type="button" value="Reset!" onclick="Reset()"/>
+         </div>
+         <div class="image">
+             <div id="out-put">
+            <img id="output">
+             </div>
+           <input type="file" accpet="image/*" id="files" style="display:none" onchange="loadFile(event)">
+          
+         
+         </div>
+    </div>
+
+    <script src="basic.js"></script>
+</body>
+</html>

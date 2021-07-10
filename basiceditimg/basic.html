@@ -16,7 +16,7 @@
             </div>
             <div class="input input__constrast">
             <label for="input--constrast">Constrast</label>
-                <input type="range" min="0" max="100" value="50" id="input--constrast">
+                <input type="range" min="0" max="200" value="100" id="input--constrast">
             </div>
             <div class="input input__hue">
                 <label for="input--hue">Hue-Rotate</label>
@@ -25,6 +25,14 @@
             <div class="input input__sepia">
                 <label for="input--sepia">Sepia</label>
                 <input type="range" min="0" max="100" value="0" id="input--sepia">
+            </div>
+            <div class="input input__brightness">
+                <label for="input--sepia">Brightness</label>
+                <input type="range" min="0" max="200" value="100" id="input--brightness">
+            </div>
+            <div class="input input__sepia">
+                <label for="input--sepia">Saturate</label>
+                <input type="range" min="0" max="200" value="100" id="input--saturate">
             </div>
             <div class="radio-btn">
             <input type="radio" id="html" name="fav_language" value="HTML">No Flip
@@ -40,13 +48,14 @@
          <div class="image">
              <div id="out-put">
             <img id="output">
+            <canvas id="image" width="400px" height="400px"></canvas>
              </div>
            <input type="file" accpet="image/*" id="files" style="display:none" onchange="loadFile(event)">
           
          
          </div>
     </div>
-
     <script src="basic.js"></script>
+
 </body>
 </html>

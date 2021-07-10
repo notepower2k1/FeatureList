@@ -21,7 +21,7 @@ body{
    
 }
 .feature{
-    width:50%;
+    width:30%;
     padding:10px
 }
 .feature label{
@@ -31,7 +31,7 @@ body{
     justify-content:center;
 }
 .feature input[type="range"]{
-    width:80%;
+    width:100%;
 }
 .image{
     flex:1;

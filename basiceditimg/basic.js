@@ -15,27 +15,23 @@ const blurValue = document.querySelector('#input--blur')
 const constrastValue = document.querySelector('#input--constrast')
 const hueValue = document.querySelector('#input--hue')
 const sepiaValue = document.querySelector('#input--sepia')
+const brightnessValue = document.querySelector('#input--brightness')
+const saturateValue = document.querySelector('#input--saturate')
+
 const normal = document.querySelector('#html')
 const horizontal = document.querySelector('#css')
 const vertical = document.querySelector('#javascript')
 
 
-blurValue.oninput = function(){
-    output.style.filter = 'blur(' + blurValue.value/10 + 'px' +')';
-}
+const inputvalue = document.querySelectorAll('.input');
 
-constrastValue.oninput = function(){
-   
-    output.style.filter = 'contrast(' + constrastValue.value+ '%' +')';
-}
+ for(i=0;i<inputvalue.length;i++)
+ {
+   inputvalue[i].oninput = function(){
+    output.style.filter = 'saturate(' + saturateValue.value+ '%' +')' + 'brightness(' + brightnessValue.value+ '%' +')' + 'blur(' + blurValue.value/10 + 'px' +')' + 'contrast(' + constrastValue.value+ '%' +')' +'hue-rotate(' + hueValue.value+ 'deg' +')' +'sepia(' + sepiaValue.value+ '%' +')';
 
-hueValue.oninput = function(){
-  output.style.filter = 'hue-rotate(' + hueValue.value+ 'deg' +')';
-}
-
-sepiaValue.oninput = function(){
-  output.style.filter = 'sepia(' + sepiaValue.value+ '%' +')';
-}
+   }
+ }
 
 horizontal.onchange = function(){
   output.style.transform = 'scaleX(-1)'
@@ -56,6 +52,8 @@ function Reset(){
   horizontal.checked = false;
   normal.checked = false;
   vertical.checked = false;
+  saturateValue.value = 100;
+  brightnessValue.value = 100;
   output.style.transform = 'none';
   output.style.filter ='none'
 }

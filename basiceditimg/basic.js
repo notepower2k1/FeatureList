@@ -46,7 +46,7 @@ vertical.onchange = function(){
 
 function Reset(){
   blurValue.value = 0;
-  constrastValue.value = 50;
+  constrastValue.value = 100;
   hueValue.value = 0;
   sepiaValue.value = 0;
   horizontal.checked = false;

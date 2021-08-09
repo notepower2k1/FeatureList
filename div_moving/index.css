@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#pane {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+  
+#box {
+	position: absolute;
+	top: 140px;
+	left: 140px;
+	width: 100px;
+	height: 100px;
+	opacity: 0.6;
+  }
+@import "susy";
+@import "compass/reset";
+
+.stars, .twinkling, .clouds {
+	position:absolute;
+	display:block;
+	top:0; bottom:0;
+	left:0; right:0;
+	width:100%; height:100%;
+}
+
+.stars {
+	z-index: 0;
+	background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+}
+
+.twinkling{
+	
+	background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
+	animation: move-twink-back 200s linear infinite;
+}
+
+.clouds{
+	
+    background:transparent url('https://image.ibb.co/bT4N7T/clouds.png') repeat top center;
+	animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+	from {background-position:0 0;}
+	to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+	from {background-position:0 0;}
+	to {background-position:10000px 0;}
+}
+.button button{
+ margin:0 5px;
+}
+.fas{
+	font-size:2em;
+	padding:5px;
+}
+.activeStyle{
+	background-color: burlywood;
+}

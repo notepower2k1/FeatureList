@@ -1,14 +1,20 @@
-var canvas = document.getElementById('image');
-var ctx = canvas.getContext('2d');
-ctx.filter = "sepia(20%)";
-var img = document.getElementById("dataimage");
-ctx.drawImage(img,0,0, canvas.width, canvas.height);
+var pane = $('#pane'),
+    box = $('#box'),
+    w = pane.width() - box.width(),
+    d = {},
+    x = 3;
 
-var downloadFile = document.getElementById('download');
-downloadFile.addEventListener('click', download, false);
+function newv(v,a,b) {
+    var n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
+    return n < 0 ? 0 : n > w ? w : n;
+}
 
+$(window).keydown(function(e) { d[e.which] = true; });
+$(window).keyup(function(e) { d[e.which] = false; });
 
-function download() {
-   var dt = canvas.toDataURL('image/jpeg');
-   this.href = dt;
-};
+setInterval(function() {
+    box.css({
+        left: function(i,v) { return newv(v, 37, 39); },
+        top: function(i,v) { return newv(v, 38, 40); }
+    });
+}, 20);

@@ -5,12 +5,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="test.css">
 </head>
 <body>
-  <img src="" id="dataimage" />
-<canvas id="image" width="400px" height="400px"></canvas>
-<a id="download">Download image</a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script src="test.js"></script>
+  <div id="pane">
+    <div id="box"></div>
+  </div>
+
+  <script>
+   var pane = $('#pane'),
+    box = $('#box'),
+    maxValue = pane.width() - box.width(),
+    keysPressed = {},
+    distancePerIteration = 3;
+
+function calculateNewValue(oldValue, keyCode1, keyCode2) {
+    var newValue = parseInt(oldValue, 10)
+                   - (keysPressed[keyCode1] ? distancePerIteration : 0)
+                   + (keysPressed[keyCode2] ? distancePerIteration : 0);
+    return newValue < 0 ? 0 : newValue > maxValue ? maxValue : newValue;
+}
+
+$(window).keydown(function(event) { keysPressed[event.which] = true; });
+$(window).keyup(function(event) { keysPressed[event.which] = false; });
+
+setInterval(function() {
+    box.css({
+        left: function(index ,oldValue) {
+            return calculateNewValue(oldValue, 37, 39);
+        },
+        top: function(index, oldValue) {
+            return calculateNewValue(oldValue, 38, 40);
+        }
+    });
+}, 20);
+  </script>
+  
+
 </body>
 </html>
